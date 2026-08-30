@@ -2,13 +2,7 @@
 
 A/B test case study analyzing whether adding express payment buttons (Google Pay & Apple Pay) to checkout improves conversion, using session/event data modeled in BigQuery and visualized in Tableau.
 
-## Project Structure
-
-```
-├── README.md
-├── ab_test_query.sql     -- BigQuery query used to build the analysis dataset
-└── dashboard             -- Tableau dashboard file 
-```
+[![Tableau Dashboard](./assets/dashboard_preview.png)](https://public.tableau.com/app/profile/karina.ohanisian/viz/ab_t_1/Dashboard1)
 
 ## 2. Hypothesis
 
