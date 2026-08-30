@@ -12,14 +12,14 @@ The development team added the ability for users to fill in payment details via 
 - increase `add_payment_info / session` by **2%**
 - increase `begin_checkout / session` by **2%**
 
-Note: `begin_checkout` can occur without `add_payment_info`, so a lift in the primary metric without a proportional lift in the secondary metric (or vice versa) was considered a plausible, valid outcome — not a contradiction
+Note: `begin_checkout` can occur without `add_payment_info`, so a lift in the primary metric without a proportional lift in the secondary metric (or vice versa) was considered a plausible, valid outcome - not a contradiction
 
 ## 3. Variants
 
 | Variant | Description |
 |---|---|
-| **A — Control** | Standard checkout flow with manual card entry  |
-| **B — Experimental** | Updated checkout flow with Google Pay and Apple Pay buttons added |
+| **A - Control** | Standard checkout flow with manual card entry  |
+| **B - Experimental** | Updated checkout flow with Google Pay and Apple Pay buttons added |
 
 | | |
 |---|---|
@@ -59,7 +59,7 @@ Both metrics beat their +2% targets by a wide margin, and traffic was evenly spl
 | **Tablet** | −32.53% not significant | −35.42% not significant |
 
 - **Desktop** drove the strongest, cleanest result across both metrics.
-- **Mobile** saw a strong, significant lift in `add_payment_info` (users happily adopted the wallet buttons), while `begin_checkout` was flat — a plausible outcome given the two events aren't strictly dependent.
+- **Mobile** saw a strong, significant lift in `add_payment_info` (users happily adopted the wallet buttons), while `begin_checkout` was flat - a plausible outcome given the two events aren't strictly dependent.
 - **Tablet** showed a large negative swing on both metrics, but on a much smaller sample, so it did **not** reach statistical significance. It's a signal to investigate, not a confirmed regression.
 
 ## 7. Conclusions & Recommendations
