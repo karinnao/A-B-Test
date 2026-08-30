@@ -79,11 +79,4 @@ The device-level breakdown indicates potential risk in the tablet segment, which
 - ⏸ **Hold Tablets on Variant A (control)** until a UX/technical audit confirms the express payment buttons render and trigger correctly on tablet viewports and browsers
 
 ## 8. Dashboard
-> - `[Dashboard on Tableau Public](https://public.tableau.com/app/profile/karina.ohanisian/viz/ab_t_1/Dashboard1)`
-
-3. Build/refresh the dashboard views listed above, filtering `event_name` to `begin_checkout` and `add_payment_info` for this test's `test` value.
-
-## 10. Notes / Next Steps
-
-- Run a formal UX audit on tablet checkout to understand the negative — but not yet significant — trend before making a rollout decision for that segment.
-- Consider extending the test duration or widening tablet traffic allocation in a follow-up test to reach significance on that segment specifically.
+[View the Tableau Dashboard](https://public.tableau.com/app/profile/karina.ohanisian/viz/ab_t_1/Dashboard1)
