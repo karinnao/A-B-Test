@@ -49,22 +49,20 @@ Significance was evaluated per metric, both at the site-wide level and within ea
 
 ### Site-wide
 
-| Metric | Result | Significant? |
+| Metric | Result | Significance |
 |---|---|---|
-| `begin_checkout` | **+6.26%** | ✅ Yes |
-| `add_payment_info` | **+12.12%** | ✅ Yes |
+| `begin_checkout` | **+6.26%** | significant |
+| `add_payment_info` | **+12.12%** | significant |
 
 Both metrics beat their +2% targets by a wide margin, and traffic was evenly split across variants, so the site-wide lift can be trusted.
-
-*(Add dashboard screenshots here, e.g. `![begin_checkout total](dashboard/begin_checkout_total.png)` and `![add_payment_info total](dashboard/add_payment_info_total.png)`.)*
 
 ### By Device
 
 | Device | `begin_checkout` | `add_payment_info` |
 |---|---|---|
-| **Desktop** | **+14.04%** ✅ significant | **+11.15%** ✅ significant |
-| **Mobile** | −2.01% (not significant) | **+16.30%** ✅ significant |
-| **Tablet** | −32.53% (not significant) | −35.42% (not significant) |
+| **Desktop** | **+14.04%**  significant | **+11.15%**  significant |
+| **Mobile** | −2.01% not significant | **+16.30%**  significant |
+| **Tablet** | −32.53% not significant | −35.42% not significant |
 
 - **Desktop** drove the strongest, cleanest result across both metrics.
 - **Mobile** saw a strong, significant lift in `add_payment_info` (users happily adopted the wallet buttons), while `begin_checkout` was flat — a plausible outcome given the two events aren't strictly dependent.
