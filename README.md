@@ -41,7 +41,7 @@ Note: `begin_checkout` can occur without `add_payment_info`, so a lift in the pr
 
 ## 5. Data & Methodology
 
-Session, event, order, and account data were combined in BigQuery into a single long-format table (`date, ga_session_id, dimensions, event_name, value`), keyed by A/B test group. This shape lets any event (including `begin_checkout` and `add_payment_info`) be sliced by `test_group`, `device`, `channel`, `country`, and `continent` directly in Tableau — see https://public.tableau.com/app/profile/karina.ohanisian/viz/ab_t_1/Dashboard1
+Session, event, order, and account data were combined in BigQuery into a single long-format table (`date, ga_session_id, dimensions, event_name, value`), keyed by A/B test group. This shape lets any event (including `begin_checkout` and `add_payment_info`) be sliced by `test_group`, `device`, `channel`, `country`, and `continent` directly in Tableau  https://public.tableau.com/app/profile/karina.ohanisian/viz/ab_t_1/Dashboard1
 
 Significance was evaluated per metric, both at the site-wide level and within each device segment
 
@@ -70,29 +70,17 @@ Both metrics beat their +2% targets by a wide margin, and traffic was evenly spl
 
 ## 7. Conclusions & Recommendations
 
-**The test is a success.** Express checkout via Google Pay/Apple Pay meaningfully improved the funnel: `begin_checkout` (+6.26%) and `add_payment_info` (+12.12%) both cleared their +2% targets with statistical significance, and simplifying payment entry did not cannibalize other checkout paths.
+**The test is a success.** Express checkout via Google Pay/Apple Pay meaningfully improved the funnel: `begin_checkout` (+6.26%) and `add_payment_info` (+12.12%) both cleared their +2% targets with statistical significance, and simplifying payment entry did not cannibalize other checkout paths
 
-The device-level breakdown surfaces a real risk, though: Tablet trended sharply negative on both metrics. With a small sample size the result isn't statistically significant, but a swing of that size shouldn't be ignored.
+The device-level breakdown indicates potential risk in the tablet segment, which experienced declines in both tracked metrics. Although this variance does not reach statistical significance due to the limited sample size, but a shift has to be further investigated 
 
 **Recommended rollout:**
-- ✅ **Ship Variant B to 100% of Desktop and Mobile traffic.**
-- ⏸ **Hold Tablet on Variant A (control)** until a UX/technical audit confirms the express payment buttons render and trigger correctly on tablet viewports and browsers.
+-  **Ship Variant B to 100% of Desktop and Mobile traffic.**
+- ⏸ **Hold Tablets on Variant A (control)** until a UX/technical audit confirms the express payment buttons render and trigger correctly on tablet viewports and browsers
 
 ## 8. Dashboard
+> - `[Dashboard on Tableau Public](https://public.tableau.com/app/profile/karina.ohanisian/viz/ab_t_1/Dashboard1)`
 
-> **TODO:** Link your published Tableau dashboard and/or add screenshots.
-> - `[View live dashboard on Tableau Public](your-link-here)`
-> - `![Dashboard overview](dashboard/overview.png)`
-
-**Suggested views:**
-- `begin_checkout` and `add_payment_info` rate by test group (site-wide)
-- Same metrics broken out by device (Desktop / Mobile / Tablet)
-- Significance indicator per segment (e.g. confidence interval or highlight for significant vs. non-significant results)
-
-## 9. How to Reproduce
-
-1. Run [`ab_test_query.sql`](./ab_test_query.sql) in BigQuery against the `DA` dataset.
-2. Connect the result set to Tableau (native BigQuery connector or export to extract/CSV).
 3. Build/refresh the dashboard views listed above, filtering `event_name` to `begin_checkout` and `add_payment_info` for this test's `test` value.
 
 ## 10. Notes / Next Steps
