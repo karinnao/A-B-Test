@@ -7,7 +7,7 @@ A/B test case study analyzing whether adding express payment buttons (Google Pay
 ```
 ├── README.md
 ├── ab_test_query.sql     -- BigQuery query used to build the analysis dataset
-└── dashboard/             -- Tableau dashboard file 
+└── dashboard             -- Tableau dashboard file 
 ```
 
 ## 1. Overview
