@@ -78,5 +78,3 @@ The device-level breakdown indicates potential risk in the tablet segment, which
 -  **Ship Variant B to 100% of Desktop and Mobile traffic.**
 - ⏸ **Hold Tablets on Variant A (control)** until a UX/technical audit confirms the express payment buttons render and trigger correctly on tablet viewports and browsers
 
-## 8. Dashboard
-[View the Tableau Dashboard](https://public.tableau.com/app/profile/karina.ohanisian/viz/ab_t_1/Dashboard1)
