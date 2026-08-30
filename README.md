@@ -41,7 +41,7 @@ Note: `begin_checkout` can occur without `add_payment_info`, so a lift in the pr
 
 ## 5. Data & Methodology
 
-Session, event, order, and account data were combined in BigQuery into a single long-format table (`date, ga_session_id, dimensions, event_name, value`), keyed by A/B test group. This shape lets any event (including `begin_checkout` and `add_payment_info`) be sliced by `test_group`, `device`, `channel`, `country`, and `continent` directly in Tableau  https://public.tableau.com/app/profile/karina.ohanisian/viz/ab_t_1/Dashboard1
+Session, event, order, and account data were combined in BigQuery into a single long-format table (`date, ga_session_id, dimensions, event_name, value`), keyed by A/B test group. This shape lets any event (including `begin_checkout` and `add_payment_info`) be sliced by `test_group`, `device`, `channel`, `country`, and `continent` directly in [Tableau](https://public.tableau.com/app/profile/karina.ohanisian/viz/ab_t_1/Dashboard1)
 
 Significance was evaluated per metric, both at the site-wide level and within each device segment
 
