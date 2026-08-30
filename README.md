@@ -12,13 +12,13 @@ A/B test case study analyzing whether adding express payment buttons (Google Pay
 
 ## 2. Hypothesis
 
-The development team added the ability for users to fill in payment details via **Google Pay** (Android/Chrome) or **Apple Pay** (iOS/Safari) instead of manual card entry.
+The development team added the ability for users to fill in payment details via Google Pay or Apple Pay instead of manual card entry.
 
-**We believe** that this reduction in checkout friction will:
+**Hypothesis:** Reduction in checkout friction will:
 - increase `add_payment_info / session` by **2%**, and, as a result,
 - increase `begin_checkout / session` by **2%**.
 
-Note: `begin_checkout` can occur without `add_payment_info`, so a lift in the primary metric without a proportional lift in the secondary metric (or vice versa) was considered a plausible, valid outcome — not a contradiction.
+Note: `begin_checkout` can occur without `add_payment_info`, so a lift in the primary metric without a proportional lift in the secondary metric (or vice versa) was considered a plausible, valid outcome — not a contradiction
 
 ## 3. Variants
 
@@ -41,7 +41,7 @@ Note: `begin_checkout` can occur without `add_payment_info`, so a lift in the pr
 
 Session, event, order, and account data were combined in BigQuery into a single long-format table (`date, ga_session_id, dimensions, event_name, value`), keyed by A/B test group. This shape lets any event (including `begin_checkout` and `add_payment_info`) be sliced by `test_group`, `device`, `channel`, `country`, and `continent` directly in Tableau — see [`ab_test_query.sql`](./ab_test_query.sql).
 
-Significance was evaluated per metric, both at the site-wide level and within each device segment, with a 50/50 traffic split maintained throughout the test window.
+Significance was evaluated per metric, both at the site-wide level and within each device segment
 
 ## 6. Results
 
