@@ -24,7 +24,7 @@ Note: `begin_checkout` can occur without `add_payment_info`, so a lift in the pr
 
 | Variant | Description |
 |---|---|
-| **A — Control** | Standard checkout flow with manual card entry (no express payment buttons) |
+| **A — Control** | Standard checkout flow with manual card entry  |
 | **B — Experimental** | Updated checkout flow with Google Pay and Apple Pay buttons added |
 
 | **Audience** | All users reaching checkout (subject to wallet availability on their device) |
