@@ -10,16 +10,6 @@ A/B test case study analyzing whether adding express payment buttons (Google Pay
 └── dashboard             -- Tableau dashboard file 
 ```
 
-## 1. Overview
-
-| | |
-|---|---|
-| **Test name** | Express Checkout A/B Test |
-| **Owner** | Karina Ohanisian |
-| **Duration** | May 1 – May 25, 2026 |
-| **Audience** | All users reaching checkout (subject to wallet availability on their device) |
-| **Traffic split** | 50% Control / 50% Variant |
-
 ## 2. Hypothesis
 
 The development team added the ability for users to fill in payment details via **Google Pay** (Android/Chrome) or **Apple Pay** (iOS/Safari) instead of manual card entry.
@@ -36,6 +26,9 @@ Note: `begin_checkout` can occur without `add_payment_info`, so a lift in the pr
 |---|---|
 | **A — Control** | Standard checkout flow with manual card entry (no express payment buttons) |
 | **B — Experimental** | Updated checkout flow with Google Pay and Apple Pay buttons added |
+
+| **Audience** | All users reaching checkout (subject to wallet availability on their device) |
+| **Traffic split** | 50% Control / 50% Variant |
 
 ## 4. Metrics
 
