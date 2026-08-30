@@ -15,8 +15,8 @@ A/B test case study analyzing whether adding express payment buttons (Google Pay
 The development team added the ability for users to fill in payment details via Google Pay or Apple Pay instead of manual card entry.
 
 **Hypothesis:** Reduction in checkout friction will:
-- increase `add_payment_info / session` by **2%**, and, as a result,
-- increase `begin_checkout / session` by **2%**.
+- increase `add_payment_info / session` by **2%**
+- increase `begin_checkout / session` by **2%**
 
 Note: `begin_checkout` can occur without `add_payment_info`, so a lift in the primary metric without a proportional lift in the secondary metric (or vice versa) was considered a plausible, valid outcome — not a contradiction
 
