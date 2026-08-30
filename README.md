@@ -29,7 +29,7 @@ Note: `begin_checkout` can occur without `add_payment_info`, so a lift in the pr
 
 | | |
 |---|---|
-| **Audience** | All users reaching checkout (subject to wallet availability on their device) |
+| **Audience** | All users reaching checkout  |
 | **Traffic split** | 50% Control / 50% Variant |
 
 ## 4. Metrics
