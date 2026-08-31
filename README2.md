@@ -1,6 +1,6 @@
 ## A/B Test: Express Checkout (Google Pay / Apple Pay)
 
-A/B test case study analyzing whether adding express payment buttons (Google Pay & Apple Pay) to checkout improves conversion, using session/event data modeled in BigQuery and visualized in Tableau.
+A/B test case study analyzing whether adding express payment buttons (Google Pay & Apple Pay) to checkout improves conversion, using session/event data modeled in BigQuery and visualized in Tableau
 
 **Hypothesis**
 
@@ -9,7 +9,7 @@ Hypothesis: Reduction in checkout friction will:
 - increase add_payment_info / session by 2%
 - increase begin_checkout / session by 2%
 
-Note: begin_checkout can occur without add_payment_info, so a lift in the primary metric without a proportional lift in the secondary metric (or vice versa) was considered a plausible, valid outcome - not a contradiction.
+Note: begin_checkout can occur without add_payment_info, so a lift in the primary metric without a proportional lift in the secondary metric (or vice versa) was considered a plausible, valid outcome - not a contradiction
 
 **Variants**
 
@@ -30,8 +30,8 @@ add_payment_info / session | Secondary | +2%
 
 **Data & Methodology**
 
-Session, event, order, and account data were combined in BigQuery into a single long-format table (date, ga_session_id, dimensions, event_name, value), keyed by A/B test group. This shape lets any event (including begin_checkout and add_payment_info) be sliced by test_group, device, channel, country, and continent directly in Tableau.
-Significance was evaluated per metric, site-wide, as well as within device, continent, and channel segments.
+Session, event, order, and account data were combined in BigQuery into a single long-format table (date, ga_session_id, dimensions, event_name, value), keyed by A/B test group. This shape lets any event (including begin_checkout and add_payment_info) be sliced by test_group, device, channel, country, and continent directly in Tableau
+Significance was evaluated per metric, site-wide, as well as within device, continent, and channel segments
 
 **Results:**
 
@@ -42,7 +42,7 @@ Metric | Result | Significance
 begin_checkout | +6.26% | Significant
 add_payment_info | +12.12% | Significant
 
-Both metrics beat their +2% targets by a wide margin, and traffic was evenly split across variants, so the site-wide lift can be trusted.
+Both metrics beat their +2% targets by a wide margin, and traffic was evenly split across variants, so the site-wide lift can be trusted
 
 *By Device*
 
@@ -52,9 +52,9 @@ Desktop | +14.04% (significant) | +11.15% (significant)
 Mobile | −2.01% (not significant) | +16.30% (significant)
 Tablet | −32.53% (not significant) | −35.42% (not significant)
 
-- Desktop drove the strongest, cleanest result across both metrics.
-- Mobile saw a strong, significant lift in add_payment_info (users happily adopted the wallet buttons), while begin_checkout was flat - a plausible outcome given the two events aren't strictly dependent.
-- Tablet showed a large negative swing on both metrics, but on a much smaller sample, so it did not reach statistical significance. It's a signal to investigate, not a confirmed regression.
+- Desktop drove the strongest, cleanest result across both metrics
+- Mobile saw a strong, significant lift in add_payment_info (users happily adopted the wallet buttons), while begin_checkout was flat - a plausible outcome given the two events aren't strictly dependent
+- Tablet showed a large negative swing on both metrics, but on a much smaller sample, so it did not reach statistical significance. It's a signal to investigate, not a confirmed regression
 
 *By Continent*
 
@@ -66,10 +66,10 @@ Asia | +9.51% | +6.44% | begin_checkout significant
 Africa | −38.89% | +26.32% | not significant
 Oceania | +55.56% | +10.53% | not significant
 
-- Europe showed lifts in both metrics, with p < 0.05.
-- Americas (largest volume) showed a lift in add_payment_info (+6.32%, p < 0.05), while begin_checkout remained flat (+1.60%, p > 0.05).
-- Asia showed a lift in begin_checkout (+9.51%, p < 0.05) and add_payment_info (+6.44%, p > 0.05).
-- Africa and Oceania had low sample sizes (~500 sessions per group), resulting in high variance without statistical significance.
+- Europe showed lifts in both metrics
+- Americas showed a lift in add_payment_info, while begin_checkout remained flat 
+- Asia showed a lift in begin_checkout and add_payment_info 
+- Africa and Oceania had low sample sizes, resulting in high variance without statistical significance
 
 *By Channel*
 
@@ -91,5 +91,5 @@ The test is a success. Express checkout via Google Pay/Apple Pay meaningfully im
 **Recommendations:**
 - Ship Variant B to 100% of Desktop and Mobile traffic in Direct, Paid Search, and Social Search channels across Europe, Americas, and Asia
 - Hold Organic Search traffic on Variant A (control) pending technical investigation into the conversion drop
-- Hold Tablets on Variant A (control) until a UX/technical audit confirms the express payment buttons render and trigger correctly on tablet viewports and browsers.
+- Hold Tablets on Variant A (control) until a UX/technical audit confirms the express payment buttons render and trigger correctly on tablet viewports and browsers
 - Audit technical setups in Africa prior to enabling Variant B in that region. Low sample size makes this non-significant, but technical gateway compatibility requires verification
